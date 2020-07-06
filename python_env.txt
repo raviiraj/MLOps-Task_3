@@ -1,0 +1,14 @@
+sudo cd /root/MLOps-Task_3/
+if sudo docker ps | grep python_env
+then 
+echo "Container already Running"
+elif sudo docker ps -a | grep python_env
+then
+sudo docker start python_env
+else
+sudo cd /root/
+if ls | grep workspace
+then sudo rm -rvf workspace
+fi sudo mkdir workspace
+sudo docker run -dit -v /root/MLOps-Task_3/:/root/workspace// --name python_env python_env:v0
+fi

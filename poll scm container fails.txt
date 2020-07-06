@@ -1,0 +1,16 @@
+if sudo docker ps -a | grep python_env
+then 
+
+if sudo docker ps | grep python_env
+
+then
+sudo echo "All Good"
+else
+
+sudo docker start python_env
+fi
+else
+
+sudo docker run --name python_env python_env:v0
+
+fi
